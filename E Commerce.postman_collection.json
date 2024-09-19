@@ -1,0 +1,397 @@
+{
+	"info": {
+		"_postman_id": "a6ce15bb-5df7-4f7d-8235-502bc82860c9",
+		"name": "E Commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25321988",
+		"_collection_link": "https://cloudy-shuttle-551329.postman.co/workspace/My-Workspace~520cda8b-cc97-4bb9-82dc-0aa0c3562a54/collection/25321988-a6ce15bb-5df7-4f7d-8235-502bc82860c9?action=share&source=collection_link&creator=25321988"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "User Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstName",
+									"value": "Prasanna",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Ghose",
+									"type": "text"
+								},
+								{
+									"key": "user_role",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "prasannaghose123@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "9983257",
+									"type": "text"
+								},
+								{
+									"key": "mobileNumber",
+									"value": "98536469651",
+									"type": "text"
+								},
+								{
+									"key": "adhara_number",
+									"value": "12345678654129",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/api/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/auth/login?email=susmitanayak3051@gmail.com&password=9983257",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "susmitanayak3051@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "9983257"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "addProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVzSW4iOjM2MDAsInVzZXIiOnsidXNlcklkIjoxLCJ1c2VyRmlyc3ROYW1lIjoiU3VzbWl0YSIsInVzZXJMYXN0TmFtZSI6Ik5heWFrIn0sImlhdCI6MTcxNjAzNTgzMX0.bJJNXOpFaenCsgHslQlzfLsd8P7yQRWRGgejXRbye1Y"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_name",
+									"value": "Realme T2",
+									"type": "text"
+								},
+								{
+									"key": "product_description",
+									"value": "Realme Phone",
+									"type": "text"
+								},
+								{
+									"key": "stock_keeping_unit",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "Category",
+									"value": "1",
+									"description": "(Master Data)",
+									"type": "text"
+								},
+								{
+									"key": "Brand",
+									"value": "2",
+									"description": "(Master Data)",
+									"type": "text"
+								},
+								{
+									"key": "Price",
+									"value": "34000.00",
+									"type": "text"
+								},
+								{
+									"key": "quantity_in_stock",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "Images",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/api/product/addProduct"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RBAC",
+			"item": [
+				{
+					"name": "addRole",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVzSW4iOjM2MDAsInVzZXIiOnsidXNlcklkIjoxLCJ1c2VyRmlyc3ROYW1lIjoiU3VzbWl0YSIsInVzZXJMYXN0TmFtZSI6Ik5heWFrIn0sImlhdCI6MTcxNjg3NjIwNH0.3avp8B4WVpi4qggMNZ5Qb8jKsB3MNZCYshMXyWMeSb4"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "roleName",
+									"value": "Guest",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/api/rbac/addRole"
+					},
+					"response": []
+				},
+				{
+					"name": "addPermission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVzSW4iOjM2MDAsInVzZXIiOnsidXNlcklkIjoxLCJ1c2VyRmlyc3ROYW1lIjoiU3VzbWl0YSIsInVzZXJMYXN0TmFtZSI6Ik5heWFrIn0sImlhdCI6MTcxNjg3NjIwNH0.3avp8B4WVpi4qggMNZ5Qb8jKsB3MNZCYshMXyWMeSb4"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "permissionName",
+									"value": "Make Purchases",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/api/rbac/addPermission"
+					},
+					"response": []
+				},
+				{
+					"name": "assignRolePermission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVzSW4iOjM2MDAsInVzZXIiOnsidXNlcklkIjoxLCJ1c2VyRmlyc3ROYW1lIjoiU3VzbWl0YSIsInVzZXJMYXN0TmFtZSI6Ik5heWFrIn0sImlhdCI6MTcxNjkwMDk0MH0.WzfyxBKLlgNNtlSGsDJmBgcqZBsZukgHJMv1RqgrrcQ"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleId\": 3,\r\n    \"permissionIds\": [2,4]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/rbac/assignRolePermission"
+					},
+					"response": []
+				},
+				{
+					"name": "fetchRolePermission",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVzSW4iOjM2MDAsInVzZXIiOnsidXNlcklkIjoxLCJ1c2VyRmlyc3ROYW1lIjoiU3VzbWl0YSIsInVzZXJMYXN0TmFtZSI6Ik5heWFrIn0sImlhdCI6MTcxNjk2MDgwNn0.q6_ul8N3PvgD0EL9E5R3saV5x1MceSvSulHc2m06LN0"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "roleId",
+									"value": "60",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/api/rbac/fetchRolePermission"
+					},
+					"response": []
+				},
+				{
+					"name": "editRolePermission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVzSW4iOjM2MDAsInVzZXIiOnsidXNlcklkIjoxLCJ1c2VyRmlyc3ROYW1lIjoiU3VzbWl0YSIsInVzZXJMYXN0TmFtZSI6Ik5heWFrIn0sImlhdCI6MTcxNjg5NzMxNH0.SYFgdIpFaNcoJ6fUVIrOw7KqE_4c_8ChelkOtM3p_xw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleId\": 1,\r\n    \"permissionIds\": [2, 4, 5]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/rbac/editRolePermission"
+					},
+					"response": []
+				},
+				{
+					"name": "assignUserWithRole",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVzSW4iOjM2MDAsInVzZXIiOnsidXNlcklkIjoxLCJ1c2VyRmlyc3ROYW1lIjoiU3VzbWl0YSIsInVzZXJMYXN0TmFtZSI6Ik5heWFrIn0sImlhdCI6MTcxNjk2MDgwNn0.q6_ul8N3PvgD0EL9E5R3saV5x1MceSvSulHc2m06LN0"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserId\": 2,\r\n    \"roleId\": [1, 3, 4]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/rbac/assignUserWithRole"
+					},
+					"response": []
+				},
+				{
+					"name": "fetchUserRole",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVzSW4iOjM2MDAsInVzZXIiOnsidXNlcklkIjoxLCJ1c2VyRmlyc3ROYW1lIjoiU3VzbWl0YSIsInVzZXJMYXN0TmFtZSI6Ik5heWFrIn0sImlhdCI6MTcxNjk2MDgwNn0.q6_ul8N3PvgD0EL9E5R3saV5x1MceSvSulHc2m06LN0"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/api/rbac/fetchUserRole"
+					},
+					"response": []
+				},
+				{
+					"name": "fetchUserWiseRoleAndPermission",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVzSW4iOjM2MDAsInVzZXIiOnsidXNlcklkIjoxLCJ1c2VyRmlyc3ROYW1lIjoiU3VzbWl0YSIsInVzZXJMYXN0TmFtZSI6Ik5heWFrIn0sImlhdCI6MTcxNzA0NzE1MX0.T9rKrGkZrNTOlEXMLRU4WrzZyharEjidpZCD9teDDF8"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/api/rbac/fetchUserWiseRoleAndPermission"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "read Xml",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVzSW4iOjM2MDAsInVzZXIiOnsidXNlcklkIjoxLCJ1c2VyRmlyc3ROYW1lIjoiU3VzbWl0YSIsInVzZXJMYXN0TmFtZSI6Ik5heWFrIn0sImlhdCI6MTcyMjI1NjgwM30.MOiagOidxDLi-BMSnK_FCPblewxvuBCeRAur84rezOg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "xmlfile",
+							"type": "file",
+							"src": "/C:/Users/susmita.nayak/Downloads/8.95-KB-XML-File.xml"
+						}
+					]
+				},
+				"url": "{{base_url}}/api/product/readXml"
+			},
+			"response": []
+		}
+	]
+}
